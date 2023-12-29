@@ -1,0 +1,99 @@
+@startuml
+
+component SprintgBoot {
+
+
+    database postgres {
+        ' rdms
+        package board_service {
+            entity board {
+                name: String,
+                description: String,
+                sid: String,
+                owner_sid: String,
+                link: String
+            }
+
+            entity board_members {
+                sid: String,
+                user_sid: String,
+                permission: JSON
+            }
+
+            entity user {
+                sid: String,
+                name: String,
+                email: String
+            }
+
+            entity board_invitation {
+                email: String,
+                board_sid: String
+                permission: JSON
+            }
+        }
+
+    }
+
+}
+
+component ExpressJs {
+    database mongoDB {
+
+        database write_document {
+
+        }
+
+        database read_document {
+
+        }
+
+        ' document based
+        package concurrent_entities {
+            entity elements {
+                board_sid: String
+                elements: Element[]
+            }
+
+            entity user_cursor {
+                user_sid: String,
+                position: String
+            }
+
+            entity elements_version {
+                version: number
+                board_sid: String,
+                elements: Element[]
+            }
+
+            entity Element {
+                element_type: String,
+                position: JSON,
+                content: String,
+                size: String,
+                color: String,
+                format: String,
+                order: String
+            }
+        }
+
+        }
+
+        component redis_cache {
+
+        }
+
+        queue document_change {
+
+        }
+
+        component operational_transformation {
+            
+        }
+}
+    
+
+    
+
+
+@enduml
