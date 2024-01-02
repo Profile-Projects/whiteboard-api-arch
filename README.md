@@ -109,6 +109,19 @@ API functionalities
 Algorithm to identify changes required on board elements based on concurrent actions
 
 
+# Front End
+
+## ReactJS application
+
+These are the below components
+
+- **WhiteBoard** : Contains shared space for user to draw and write
+- **Tools** : Contains various drag and drop, free hand and text tools
+- **PageTabs**: Contains pages to select from
+- **AttributesSection**: Contains attributes of elements on display or page
+
+
+
 
 
 
