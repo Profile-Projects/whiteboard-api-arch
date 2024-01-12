@@ -8,40 +8,34 @@ Concurrent users should not feel any lag and functionalities should be ease of u
 
 ```
 {
-    active_users: [element_sid]
-    users: {
-        element_sid: {
+    board: {
+        active: {
+            name: "",
+            description: "",
+            sid: "",
+            owner_sid: ""
+        },
+        all_board_sid: []
+    },
+    user: {
+        active: {
 
+        },
+        board_users: [],
+        cursors: {
+            element_sid: {}
         }
     },
-    cursors: {
-        element_sid: {
-            x: "",
-            y: ""
-        }
-    },
-    active_elements: [element_sid],
-    elements: [element_sid],
-
-    element_position: {
+    elements: {
         element_sid: {
             position: {
-
+                last_changed_user: user_sid,
+                last_changed_timestamp: itimestamp
             },
-            last_changed_user: element_sid,
-            last_changed_timestamp: timestamp 
-        }
-    },
-
-    element_size: {
-        element_sid: {
-            size: 5
-        }
-    },
-
-    element_attr: {
-        element_sid: {
-
+            size: {
+                last_changed_user: user_sid,
+                last_changed_timestamp: itimestamp
+            }
         }
     }
 
